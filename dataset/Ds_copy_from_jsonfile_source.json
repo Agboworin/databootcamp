@@ -1,0 +1,20 @@
+{
+	"name": "Ds_copy_from_jsonfile_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_copy_from_stgaing_jsonfile",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "*",
+				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/HandyCandy",
+				"fileSystem": "staging"
+			}
+		},
+		"schema": {}
+	}
+}
