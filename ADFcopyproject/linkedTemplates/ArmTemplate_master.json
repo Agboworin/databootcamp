@@ -1,0 +1,558 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFcopyproject"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"LS_Blobcopy_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Blobcopy'"
+		},
+		"LS_adlscopy_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adlscopy'"
+		},
+		"LS_data_to_dedicatedslqpl_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_data_to_dedicatedslqpl'"
+		},
+		"Ls_copy_to_db_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Ls_copy_to_db_sink'"
+		},
+		"Ls_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_source'"
+		},
+		"Ls_unmatching_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Ls_unmatching'"
+		},
+		"Ls_unmatchingschema_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_unmatchingschema'"
+		},
+		"Ls_unzip_sink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Ls_unzip_sink'"
+		},
+		"Ls_unzip_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_unzip_source'"
+		},
+		"Ls_unzip_srce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_unzip_srce'"
+		},
+		"copy_from_db_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'copy_from_db'"
+		},
+		"linksevis_from_Azuredb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linksevis_from_Azuredb'"
+		},
+		"ls_4staging_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_4staging_adls'"
+		},
+		"ls_bukcopy_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
+		},
+		"ls_copy_from_stgaing_jsonfile_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_copy_from_stgaing_jsonfile'"
+		},
+		"ls_copybd_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_copybd_sink'"
+		},
+		"ls_csvfile_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_csvfile_source'"
+		},
+		"ls_db_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_db_sink'"
+		},
+		"ls_parquetfile_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_parquetfile_sink'"
+		},
+		"ls_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sink'"
+		},
+		"ls_to_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_to_adls'"
+		},
+		"ls_unzip_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_unzip'"
+		},
+		"ls_unzip_snk_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_unzip_snk'"
+		},
+		"ls_unzip_sorce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_unzip_sorce'"
+		},
+		"ls_unzip_znk_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_unzip_znk'"
+		},
+		"lssoruce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lssoruce'"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"LS_adlscopy_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "ddsqlprojectpractice"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"Ls_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unmatching_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"Ls_unmatching_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"Ls_unmatching_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"Ls_unmatchingschema_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unzip_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unzip_srce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"copy_from_db_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"copy_from_db_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_copyproject"
+		},
+		"copy_from_db_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqldeuser"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_copyproject"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"ls_4staging_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_bukcopy_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_copy_from_stgaing_jsonfile_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_copybd_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_copybd_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"ls_copybd_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"ls_csvfile_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_db_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_db_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"ls_db_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"ls_parquetfile_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_to_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_snk_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_sorce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_znk_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"lssoruce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADFcopyproject_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"LS_Blobcopy_connectionString": {
+						"value": "[parameters('LS_Blobcopy_connectionString')]"
+					},
+					"LS_adlscopy_accountKey": {
+						"value": "[parameters('LS_adlscopy_accountKey')]"
+					},
+					"LS_data_to_dedicatedslqpl_password": {
+						"value": "[parameters('LS_data_to_dedicatedslqpl_password')]"
+					},
+					"Ls_copy_to_db_sink_password": {
+						"value": "[parameters('Ls_copy_to_db_sink_password')]"
+					},
+					"Ls_source_accountKey": {
+						"value": "[parameters('Ls_source_accountKey')]"
+					},
+					"Ls_unmatching_password": {
+						"value": "[parameters('Ls_unmatching_password')]"
+					},
+					"Ls_unmatchingschema_accountKey": {
+						"value": "[parameters('Ls_unmatchingschema_accountKey')]"
+					},
+					"Ls_unzip_sink_connectionString": {
+						"value": "[parameters('Ls_unzip_sink_connectionString')]"
+					},
+					"Ls_unzip_source_accountKey": {
+						"value": "[parameters('Ls_unzip_source_accountKey')]"
+					},
+					"Ls_unzip_srce_accountKey": {
+						"value": "[parameters('Ls_unzip_srce_accountKey')]"
+					},
+					"copy_from_db_password": {
+						"value": "[parameters('copy_from_db_password')]"
+					},
+					"linksevis_from_Azuredb_password": {
+						"value": "[parameters('linksevis_from_Azuredb_password')]"
+					},
+					"ls_4staging_adls_accountKey": {
+						"value": "[parameters('ls_4staging_adls_accountKey')]"
+					},
+					"ls_bukcopy_sink_accountKey": {
+						"value": "[parameters('ls_bukcopy_sink_accountKey')]"
+					},
+					"ls_copy_from_stgaing_jsonfile_accountKey": {
+						"value": "[parameters('ls_copy_from_stgaing_jsonfile_accountKey')]"
+					},
+					"ls_copybd_sink_password": {
+						"value": "[parameters('ls_copybd_sink_password')]"
+					},
+					"ls_csvfile_source_accountKey": {
+						"value": "[parameters('ls_csvfile_source_accountKey')]"
+					},
+					"ls_db_sink_password": {
+						"value": "[parameters('ls_db_sink_password')]"
+					},
+					"ls_parquetfile_sink_accountKey": {
+						"value": "[parameters('ls_parquetfile_sink_accountKey')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"LS_adlscopy_properties_typeProperties_url": {
+						"value": "[parameters('LS_adlscopy_properties_typeProperties_url')]"
+					},
+					"LS_data_to_dedicatedslqpl_properties_typeProperties_server": {
+						"value": "[parameters('LS_data_to_dedicatedslqpl_properties_typeProperties_server')]"
+					},
+					"LS_data_to_dedicatedslqpl_properties_typeProperties_database": {
+						"value": "[parameters('LS_data_to_dedicatedslqpl_properties_typeProperties_database')]"
+					},
+					"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+						"value": "[parameters('LS_data_to_dedicatedslqpl_properties_typeProperties_userName')]"
+					},
+					"Ls_copy_to_db_sink_properties_typeProperties_server": {
+						"value": "[parameters('Ls_copy_to_db_sink_properties_typeProperties_server')]"
+					},
+					"Ls_copy_to_db_sink_properties_typeProperties_database": {
+						"value": "[parameters('Ls_copy_to_db_sink_properties_typeProperties_database')]"
+					},
+					"Ls_copy_to_db_sink_properties_typeProperties_userName": {
+						"value": "[parameters('Ls_copy_to_db_sink_properties_typeProperties_userName')]"
+					},
+					"Ls_source_properties_typeProperties_url": {
+						"value": "[parameters('Ls_source_properties_typeProperties_url')]"
+					},
+					"Ls_unmatching_properties_typeProperties_server": {
+						"value": "[parameters('Ls_unmatching_properties_typeProperties_server')]"
+					},
+					"Ls_unmatching_properties_typeProperties_database": {
+						"value": "[parameters('Ls_unmatching_properties_typeProperties_database')]"
+					},
+					"Ls_unmatching_properties_typeProperties_userName": {
+						"value": "[parameters('Ls_unmatching_properties_typeProperties_userName')]"
+					},
+					"Ls_unmatchingschema_properties_typeProperties_url": {
+						"value": "[parameters('Ls_unmatchingschema_properties_typeProperties_url')]"
+					},
+					"Ls_unzip_source_properties_typeProperties_url": {
+						"value": "[parameters('Ls_unzip_source_properties_typeProperties_url')]"
+					},
+					"Ls_unzip_srce_properties_typeProperties_url": {
+						"value": "[parameters('Ls_unzip_srce_properties_typeProperties_url')]"
+					},
+					"copy_from_db_properties_typeProperties_server": {
+						"value": "[parameters('copy_from_db_properties_typeProperties_server')]"
+					},
+					"copy_from_db_properties_typeProperties_database": {
+						"value": "[parameters('copy_from_db_properties_typeProperties_database')]"
+					},
+					"copy_from_db_properties_typeProperties_userName": {
+						"value": "[parameters('copy_from_db_properties_typeProperties_userName')]"
+					},
+					"linksevis_from_Azuredb_properties_typeProperties_server": {
+						"value": "[parameters('linksevis_from_Azuredb_properties_typeProperties_server')]"
+					},
+					"linksevis_from_Azuredb_properties_typeProperties_database": {
+						"value": "[parameters('linksevis_from_Azuredb_properties_typeProperties_database')]"
+					},
+					"linksevis_from_Azuredb_properties_typeProperties_userName": {
+						"value": "[parameters('linksevis_from_Azuredb_properties_typeProperties_userName')]"
+					},
+					"ls_4staging_adls_properties_typeProperties_url": {
+						"value": "[parameters('ls_4staging_adls_properties_typeProperties_url')]"
+					},
+					"ls_bukcopy_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_bukcopy_sink_properties_typeProperties_url')]"
+					},
+					"ls_copy_from_stgaing_jsonfile_properties_typeProperties_url": {
+						"value": "[parameters('ls_copy_from_stgaing_jsonfile_properties_typeProperties_url')]"
+					},
+					"ls_copybd_sink_properties_typeProperties_server": {
+						"value": "[parameters('ls_copybd_sink_properties_typeProperties_server')]"
+					},
+					"ls_copybd_sink_properties_typeProperties_database": {
+						"value": "[parameters('ls_copybd_sink_properties_typeProperties_database')]"
+					},
+					"ls_copybd_sink_properties_typeProperties_userName": {
+						"value": "[parameters('ls_copybd_sink_properties_typeProperties_userName')]"
+					},
+					"ls_csvfile_source_properties_typeProperties_url": {
+						"value": "[parameters('ls_csvfile_source_properties_typeProperties_url')]"
+					},
+					"ls_db_sink_properties_typeProperties_server": {
+						"value": "[parameters('ls_db_sink_properties_typeProperties_server')]"
+					},
+					"ls_db_sink_properties_typeProperties_database": {
+						"value": "[parameters('ls_db_sink_properties_typeProperties_database')]"
+					},
+					"ls_db_sink_properties_typeProperties_userName": {
+						"value": "[parameters('ls_db_sink_properties_typeProperties_userName')]"
+					},
+					"ls_parquetfile_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_parquetfile_sink_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADFcopyproject_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_sink_accountKey": {
+						"value": "[parameters('ls_sink_accountKey')]"
+					},
+					"ls_to_adls_accountKey": {
+						"value": "[parameters('ls_to_adls_accountKey')]"
+					},
+					"ls_unzip_accountKey": {
+						"value": "[parameters('ls_unzip_accountKey')]"
+					},
+					"ls_unzip_snk_accountKey": {
+						"value": "[parameters('ls_unzip_snk_accountKey')]"
+					},
+					"ls_unzip_sorce_accountKey": {
+						"value": "[parameters('ls_unzip_sorce_accountKey')]"
+					},
+					"ls_unzip_znk_accountKey": {
+						"value": "[parameters('ls_unzip_znk_accountKey')]"
+					},
+					"lssoruce_accountKey": {
+						"value": "[parameters('lssoruce_accountKey')]"
+					},
+					"ls_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_sink_properties_typeProperties_url')]"
+					},
+					"ls_to_adls_properties_typeProperties_url": {
+						"value": "[parameters('ls_to_adls_properties_typeProperties_url')]"
+					},
+					"ls_unzip_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_properties_typeProperties_url')]"
+					},
+					"ls_unzip_snk_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_snk_properties_typeProperties_url')]"
+					},
+					"ls_unzip_sorce_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_sorce_properties_typeProperties_url')]"
+					},
+					"ls_unzip_znk_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_znk_properties_typeProperties_url')]"
+					},
+					"lssoruce_properties_typeProperties_url": {
+						"value": "[parameters('lssoruce_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADFcopyproject_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_1')]"
+			]
+		}
+	]
+}

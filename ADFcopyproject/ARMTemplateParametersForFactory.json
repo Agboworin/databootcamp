@@ -1,0 +1,213 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFcopyproject"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_Blobcopy_connectionString": {
+			"value": ""
+		},
+		"LS_adlscopy_accountKey": {
+			"value": ""
+		},
+		"LS_data_to_dedicatedslqpl_password": {
+			"value": ""
+		},
+		"Ls_copy_to_db_sink_password": {
+			"value": ""
+		},
+		"Ls_source_accountKey": {
+			"value": ""
+		},
+		"Ls_unmatching_password": {
+			"value": ""
+		},
+		"Ls_unmatchingschema_accountKey": {
+			"value": ""
+		},
+		"Ls_unzip_sink_connectionString": {
+			"value": ""
+		},
+		"Ls_unzip_source_accountKey": {
+			"value": ""
+		},
+		"Ls_unzip_srce_accountKey": {
+			"value": ""
+		},
+		"copy_from_db_password": {
+			"value": ""
+		},
+		"linksevis_from_Azuredb_password": {
+			"value": ""
+		},
+		"ls_4staging_adls_accountKey": {
+			"value": ""
+		},
+		"ls_bukcopy_sink_accountKey": {
+			"value": ""
+		},
+		"ls_copy_from_stgaing_jsonfile_accountKey": {
+			"value": ""
+		},
+		"ls_copybd_sink_password": {
+			"value": ""
+		},
+		"ls_csvfile_source_accountKey": {
+			"value": ""
+		},
+		"ls_db_sink_password": {
+			"value": ""
+		},
+		"ls_parquetfile_sink_accountKey": {
+			"value": ""
+		},
+		"ls_sink_accountKey": {
+			"value": ""
+		},
+		"ls_to_adls_accountKey": {
+			"value": ""
+		},
+		"ls_unzip_accountKey": {
+			"value": ""
+		},
+		"ls_unzip_snk_accountKey": {
+			"value": ""
+		},
+		"ls_unzip_sorce_accountKey": {
+			"value": ""
+		},
+		"ls_unzip_znk_accountKey": {
+			"value": ""
+		},
+		"lssoruce_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"LS_adlscopy_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_database": {
+			"value": "ddsqlprojectpractice"
+		},
+		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"Ls_copy_to_db_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"Ls_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unmatching_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"Ls_unmatching_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"Ls_unmatching_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"Ls_unmatchingschema_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unzip_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"Ls_unzip_srce_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"copy_from_db_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"copy_from_db_properties_typeProperties_database": {
+			"value": "db_copyproject"
+		},
+		"copy_from_db_properties_typeProperties_userName": {
+			"value": "Sqldeuser"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_database": {
+			"value": "db_copyproject"
+		},
+		"linksevis_from_Azuredb_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"ls_4staging_adls_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_bukcopy_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_copy_from_stgaing_jsonfile_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_copybd_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_copybd_sink_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_copybd_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"ls_csvfile_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_db_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_db_sink_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_db_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"ls_parquetfile_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_to_adls_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_snk_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_sorce_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_unzip_znk_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"lssoruce_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		}
+	}
+}
