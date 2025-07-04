@@ -1,0 +1,48 @@
+{
+	"name": "ds_Json_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_adlscopy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "00816cd4-0d98-4505-8b8f-8b3ba08aab31.json",
+				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/HandyCandy",
+				"fileSystem": "staging"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"TransactionId": {
+					"type": "string"
+				},
+				"TransactionDate": {
+					"type": "string"
+				},
+				"StoreId": {
+					"type": "string"
+				},
+				"Items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Product": {
+								"type": "string"
+							},
+							"Price": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

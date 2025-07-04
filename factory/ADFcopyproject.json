@@ -1,0 +1,9 @@
+{
+	"name": "ADFcopyproject",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "345ab637-b8ed-4a5f-b5d0-78617951daef",
+		"tenantId": "07e1cfb4-92d3-4aed-92c4-ba4c7a9b750c"
+	}
+}

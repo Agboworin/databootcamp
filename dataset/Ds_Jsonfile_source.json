@@ -1,0 +1,51 @@
+{
+	"name": "Ds_Jsonfile_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_adlscopy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "April.json",
+				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/SugarCube/2020/Q2",
+				"fileSystem": "staging"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Month": {
+					"type": "string"
+				},
+				"Company": {
+					"type": "string"
+				},
+				"Sales": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Product": {
+								"type": "string"
+							},
+							"ManufacturerProductCode": {
+								"type": "string"
+							},
+							"Units": {
+								"type": "integer"
+							},
+							"Value": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

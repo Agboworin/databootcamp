@@ -1,0 +1,24 @@
+{
+	"name": "ds_souce",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Azure-Data-Factory-datasets.zip",
+				"folderPath": "copytask",
+				"fileSystem": "classdata"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Fastest"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
