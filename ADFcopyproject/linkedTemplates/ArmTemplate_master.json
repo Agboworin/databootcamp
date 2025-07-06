@@ -83,6 +83,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_db_sink'"
 		},
+		"ls_db_sink_swttrtfile_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_db_sink_swttrtfile'"
+		},
+		"ls_function_salesscv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_function_salesscv'"
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_parquetfile_sink'"
@@ -90,6 +98,10 @@
 		"ls_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_sink'"
+		},
+		"ls_sweettreat_csvfile_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sweettreat_csvfile'"
 		},
 		"ls_to_adls_accountKey": {
 			"type": "secureString",
@@ -247,11 +259,31 @@
 			"type": "string",
 			"defaultValue": "Sqladmin"
 		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"ls_function_salesscv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sweettreat_csvfile_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -363,8 +395,8 @@
 					"ls_db_sink_password": {
 						"value": "[parameters('ls_db_sink_password')]"
 					},
-					"ls_parquetfile_sink_accountKey": {
-						"value": "[parameters('ls_parquetfile_sink_accountKey')]"
+					"ls_db_sink_swttrtfile_password": {
+						"value": "[parameters('ls_db_sink_swttrtfile_password')]"
 					},
 					"AzureSqlDatabase1_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
@@ -465,8 +497,14 @@
 					"ls_db_sink_properties_typeProperties_userName": {
 						"value": "[parameters('ls_db_sink_properties_typeProperties_userName')]"
 					},
-					"ls_parquetfile_sink_properties_typeProperties_url": {
-						"value": "[parameters('ls_parquetfile_sink_properties_typeProperties_url')]"
+					"ls_db_sink_swttrtfile_properties_typeProperties_server": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_server')]"
+					},
+					"ls_db_sink_swttrtfile_properties_typeProperties_database": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_database')]"
+					},
+					"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -486,8 +524,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ls_function_salesscv_accountKey": {
+						"value": "[parameters('ls_function_salesscv_accountKey')]"
+					},
+					"ls_parquetfile_sink_accountKey": {
+						"value": "[parameters('ls_parquetfile_sink_accountKey')]"
+					},
 					"ls_sink_accountKey": {
 						"value": "[parameters('ls_sink_accountKey')]"
+					},
+					"ls_sweettreat_csvfile_accountKey": {
+						"value": "[parameters('ls_sweettreat_csvfile_accountKey')]"
 					},
 					"ls_to_adls_accountKey": {
 						"value": "[parameters('ls_to_adls_accountKey')]"
@@ -507,8 +554,17 @@
 					"lssoruce_accountKey": {
 						"value": "[parameters('lssoruce_accountKey')]"
 					},
+					"ls_function_salesscv_properties_typeProperties_url": {
+						"value": "[parameters('ls_function_salesscv_properties_typeProperties_url')]"
+					},
+					"ls_parquetfile_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_parquetfile_sink_properties_typeProperties_url')]"
+					},
 					"ls_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_sink_properties_typeProperties_url')]"
+					},
+					"ls_sweettreat_csvfile_properties_typeProperties_url": {
+						"value": "[parameters('ls_sweettreat_csvfile_properties_typeProperties_url')]"
 					},
 					"ls_to_adls_properties_typeProperties_url": {
 						"value": "[parameters('ls_to_adls_properties_typeProperties_url')]"

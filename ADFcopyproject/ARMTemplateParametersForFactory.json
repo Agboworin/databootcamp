@@ -62,10 +62,19 @@
 		"ls_db_sink_password": {
 			"value": ""
 		},
+		"ls_db_sink_swttrtfile_password": {
+			"value": ""
+		},
+		"ls_function_salesscv_accountKey": {
+			"value": ""
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"value": ""
 		},
 		"ls_sink_accountKey": {
+			"value": ""
+		},
+		"ls_sweettreat_csvfile_accountKey": {
 			"value": ""
 		},
 		"ls_to_adls_accountKey": {
@@ -185,10 +194,25 @@
 		"ls_db_sink_properties_typeProperties_userName": {
 			"value": "Sqladmin"
 		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"ls_function_salesscv_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sweettreat_csvfile_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_to_adls_properties_typeProperties_url": {
