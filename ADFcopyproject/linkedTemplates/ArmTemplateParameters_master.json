@@ -50,6 +50,12 @@
 		"ls_bukcopy_sink_accountKey": {
 			"value": ""
 		},
+		"ls_candyshark_parameters_accountKey": {
+			"value": ""
+		},
+		"ls_candyshark_sink_accountKey": {
+			"value": ""
+		},
 		"ls_copy_from_stgaing_jsonfile_accountKey": {
 			"value": ""
 		},
@@ -66,6 +72,9 @@
 			"value": ""
 		},
 		"ls_function_salesscv_accountKey": {
+			"value": ""
+		},
+		"ls_getmetadata_accountKey": {
 			"value": ""
 		},
 		"ls_parquetfile_sink_accountKey": {
@@ -170,6 +179,12 @@
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_candyshark_parameters_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_copy_from_stgaing_jsonfile_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -204,6 +219,9 @@
 			"value": "Sqladmin"
 		},
 		"ls_function_salesscv_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_getmetadata_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
