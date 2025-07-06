@@ -1,0 +1,26 @@
+{
+	"name": "ds_function_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_adlscopy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('salesfile','_',substring(utcNow(),0,4),'csv')",
+					"type": "Expression"
+				},
+				"fileSystem": "rawdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
