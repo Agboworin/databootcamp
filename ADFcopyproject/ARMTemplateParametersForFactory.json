@@ -17,6 +17,9 @@
 		"LS_data_to_dedicatedslqpl_password": {
 			"value": ""
 		},
+		"Ls_candyshark_paramater_source_accountKey": {
+			"value": ""
+		},
 		"Ls_copy_to_db_sink_password": {
 			"value": ""
 		},
@@ -50,10 +53,25 @@
 		"ls_bukcopy_sink_accountKey": {
 			"value": ""
 		},
+		"ls_candyshark_accountKey": {
+			"value": ""
+		},
+		"ls_candyshark_parameter_accountKey": {
+			"value": ""
+		},
+		"ls_candyshark_parameter_sink_accountKey": {
+			"value": ""
+		},
 		"ls_candyshark_parameters_accountKey": {
 			"value": ""
 		},
 		"ls_candyshark_sink_accountKey": {
+			"value": ""
+		},
+		"ls_candyshark_source_accountKey": {
+			"value": ""
+		},
+		"ls_copy_from_db_sorce_password": {
 			"value": ""
 		},
 		"ls_copy_from_stgaing_jsonfile_accountKey": {
@@ -62,7 +80,13 @@
 		"ls_copybd_sink_password": {
 			"value": ""
 		},
+		"ls_copydata_from_db_source_password": {
+			"value": ""
+		},
 		"ls_csvfile_source_accountKey": {
+			"value": ""
+		},
+		"ls_db_parameters_password": {
 			"value": ""
 		},
 		"ls_db_sink_password": {
@@ -78,6 +102,9 @@
 			"value": ""
 		},
 		"ls_parquetfile_sink_accountKey": {
+			"value": ""
+		},
+		"ls_salesLT_sink_accountKey": {
 			"value": ""
 		},
 		"ls_sink_accountKey": {
@@ -124,6 +151,9 @@
 		},
 		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
 			"value": "Sqladmin"
+		},
+		"Ls_candyshark_paramater_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"Ls_copy_to_db_sink_properties_typeProperties_server": {
 			"value": "svr-copyproject.database.windows.net"
@@ -179,11 +209,32 @@
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_candyshark_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_parameter_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_parameter_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_candyshark_parameters_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_candyshark_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_copy_from_db_sorce_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_copy_from_db_sorce_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ls_copy_from_db_sorce_properties_typeProperties_userName": {
+			"value": "Sqladmin"
 		},
 		"ls_copy_from_stgaing_jsonfile_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -197,8 +248,26 @@
 		"ls_copybd_sink_properties_typeProperties_userName": {
 			"value": "Sqladmin"
 		},
+		"ls_copydata_from_db_source_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_copydata_from_db_source_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ls_copydata_from_db_source_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
 		"ls_csvfile_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_db_parameters_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_db_parameters_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_db_parameters_properties_typeProperties_userName": {
+			"value": "Sqladmin"
 		},
 		"ls_db_sink_properties_typeProperties_server": {
 			"value": "svr-copyproject.database.windows.net"
@@ -225,6 +294,9 @@
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_salesLT_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_sink_properties_typeProperties_url": {
