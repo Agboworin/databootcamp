@@ -1,0 +1,24 @@
+{
+	"name": "ds_db_candyshark_tables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_copy_db_candyshark_tables",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
