@@ -1,0 +1,23 @@
+{
+	"name": "ds_candyshark_db_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_candyshark_db_sink",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().Tablename",
+				"type": "Expression"
+			}
+		}
+	}
+}

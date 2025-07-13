@@ -1,0 +1,32 @@
+{
+	"name": "ds_candushar_from_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_Candyshark_parameter_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/CandyShack",
+				"fileSystem": "staging"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
