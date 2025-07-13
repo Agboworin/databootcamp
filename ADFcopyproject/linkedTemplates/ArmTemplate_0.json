@@ -67,6 +67,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_4staging_adls'"
 		},
+		"ls_Candyshark_parameter_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_Candyshark_parameter_source'"
+		},
 		"ls_bukcopy_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
@@ -75,17 +79,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark'"
 		},
+		"ls_candyshark_db_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_candyshark_db_sink'"
+		},
 		"ls_candyshark_parameter_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark_parameter'"
-		},
-		"ls_candyshark_parameter_sink_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_candyshark_parameter_sink'"
-		},
-		"ls_candyshark_parameters_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_candyshark_parameters'"
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"type": "string",
@@ -187,6 +187,10 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_Candyshark_parameter_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -195,15 +199,19 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_candyshark_db_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
 		"ls_candyshark_parameter_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
-		},
-		"ls_candyshark_parameter_sink_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
-		},
-		"ls_candyshark_parameters_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		}
@@ -492,6 +500,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_Candyshark_parameter_source')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_Candyshark_parameter_source_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_Candyshark_parameter_source_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_bukcopy_sink')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -526,6 +551,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_candyshark_db_sink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('ls_candyshark_db_sink_properties_typeProperties_server')]",
+					"database": "[parameters('ls_candyshark_db_sink_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_candyshark_db_sink_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_candyshark_db_sink_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_candyshark_parameter')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -537,40 +584,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_candyshark_parameter_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_candyshark_parameter_sink')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ls_candyshark_parameter_sink_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ls_candyshark_parameter_sink_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_candyshark_parameters')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ls_candyshark_parameters_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ls_candyshark_parameters_accountKey')]"
 					}
 				}
 			},

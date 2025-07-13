@@ -67,6 +67,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_4staging_adls'"
 		},
+		"ls_Candyshark_parameter_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_Candyshark_parameter_source'"
+		},
 		"ls_bukcopy_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
@@ -74,6 +78,10 @@
 		"ls_candyshark_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark'"
+		},
+		"ls_candyshark_db_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_candyshark_db_sink'"
 		},
 		"ls_candyshark_parameter_accountKey": {
 			"type": "secureString",
@@ -275,6 +283,10 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_Candyshark_parameter_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -282,6 +294,18 @@
 		"ls_candyshark_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
 		},
 		"ls_candyshark_parameter_properties_typeProperties_url": {
 			"type": "string",
@@ -472,6 +496,93 @@
 								"type": "DelimitedTextReadSettings"
 							}
 						}
+					},
+					{
+						"name": "ForEach_Parameter_candyshar",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Getmetadata_candyshary",
+								"dependencyConditions": [
+									"Skipped"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Getmetadata_candyshary').output.childItems",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy_CnadyShark_from_soruce",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "DelimitedTextSource",
+											"storeSettings": {
+												"type": "AzureBlobFSReadSettings",
+												"recursive": true,
+												"enablePartitionDiscovery": false
+											},
+											"formatSettings": {
+												"type": "DelimitedTextReadSettings"
+											}
+										},
+										"sink": {
+											"type": "AzureSqlSink",
+											"writeBehavior": "insert",
+											"sqlWriterUseTableLock": false,
+											"tableOption": "autoCreate",
+											"disableMetricsCollection": false
+										},
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"typeConversion": true,
+											"typeConversionSettings": {
+												"allowDataTruncation": true,
+												"treatBooleanAsNumber": false
+											}
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "ds_candushar_from_source",
+											"type": "DatasetReference",
+											"parameters": {
+												"filename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "ds_candyshark_db_sink",
+											"type": "DatasetReference",
+											"parameters": {
+												"Tablename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
+										}
+									]
+								}
+							]
+						}
 					}
 				],
 				"policy": {
@@ -483,7 +594,9 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_candyshark_srce')]"
+				"[concat(variables('factoryId'), '/datasets/ds_candyshark_srce')]",
+				"[concat(variables('factoryId'), '/datasets/ds_candushar_from_source')]",
+				"[concat(variables('factoryId'), '/datasets/ds_candyshark_db_sink')]"
 			]
 		},
 		{
@@ -1555,6 +1668,71 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ds_candushar_from_source')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_Candyshark_parameter_source",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"filename": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@dataset().filename",
+							"type": "Expression"
+						},
+						"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/CandyShack",
+						"fileSystem": "staging"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_Candyshark_parameter_source')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_candyshark_db_sink')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_candyshark_db_sink",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"Tablename": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"table": {
+						"value": "@dataset().Tablename",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_candyshark_db_sink')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ds_candyshark_parameters_sink')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2434,6 +2612,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_Candyshark_parameter_source')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_Candyshark_parameter_source_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_Candyshark_parameter_source_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_bukcopy_sink')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -2462,6 +2657,28 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_candyshark_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_candyshark_db_sink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('ls_candyshark_db_sink_properties_typeProperties_server')]",
+					"database": "[parameters('ls_candyshark_db_sink_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_candyshark_db_sink_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_candyshark_db_sink_password')]"
 					}
 				}
 			},

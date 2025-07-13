@@ -67,6 +67,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_4staging_adls'"
 		},
+		"ls_Candyshark_parameter_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_Candyshark_parameter_source'"
+		},
 		"ls_bukcopy_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
@@ -74,6 +78,10 @@
 		"ls_candyshark_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark'"
+		},
+		"ls_candyshark_db_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_candyshark_db_sink'"
 		},
 		"ls_candyshark_parameter_accountKey": {
 			"type": "secureString",
@@ -275,6 +283,10 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_Candyshark_parameter_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -282,6 +294,18 @@
 		"ls_candyshark_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
 		},
 		"ls_candyshark_parameter_properties_typeProperties_url": {
 			"type": "string",
@@ -503,20 +527,20 @@
 					"ls_4staging_adls_accountKey": {
 						"value": "[parameters('ls_4staging_adls_accountKey')]"
 					},
+					"ls_Candyshark_parameter_source_accountKey": {
+						"value": "[parameters('ls_Candyshark_parameter_source_accountKey')]"
+					},
 					"ls_bukcopy_sink_accountKey": {
 						"value": "[parameters('ls_bukcopy_sink_accountKey')]"
 					},
 					"ls_candyshark_accountKey": {
 						"value": "[parameters('ls_candyshark_accountKey')]"
 					},
+					"ls_candyshark_db_sink_password": {
+						"value": "[parameters('ls_candyshark_db_sink_password')]"
+					},
 					"ls_candyshark_parameter_accountKey": {
 						"value": "[parameters('ls_candyshark_parameter_accountKey')]"
-					},
-					"ls_candyshark_parameter_sink_accountKey": {
-						"value": "[parameters('ls_candyshark_parameter_sink_accountKey')]"
-					},
-					"ls_candyshark_parameters_accountKey": {
-						"value": "[parameters('ls_candyshark_parameters_accountKey')]"
 					},
 					"AzureSqlDatabase1_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
@@ -593,20 +617,26 @@
 					"ls_4staging_adls_properties_typeProperties_url": {
 						"value": "[parameters('ls_4staging_adls_properties_typeProperties_url')]"
 					},
+					"ls_Candyshark_parameter_source_properties_typeProperties_url": {
+						"value": "[parameters('ls_Candyshark_parameter_source_properties_typeProperties_url')]"
+					},
 					"ls_bukcopy_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_bukcopy_sink_properties_typeProperties_url')]"
 					},
 					"ls_candyshark_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_properties_typeProperties_url')]"
 					},
+					"ls_candyshark_db_sink_properties_typeProperties_server": {
+						"value": "[parameters('ls_candyshark_db_sink_properties_typeProperties_server')]"
+					},
+					"ls_candyshark_db_sink_properties_typeProperties_database": {
+						"value": "[parameters('ls_candyshark_db_sink_properties_typeProperties_database')]"
+					},
+					"ls_candyshark_db_sink_properties_typeProperties_userName": {
+						"value": "[parameters('ls_candyshark_db_sink_properties_typeProperties_userName')]"
+					},
 					"ls_candyshark_parameter_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_parameter_properties_typeProperties_url')]"
-					},
-					"ls_candyshark_parameter_sink_properties_typeProperties_url": {
-						"value": "[parameters('ls_candyshark_parameter_sink_properties_typeProperties_url')]"
-					},
-					"ls_candyshark_parameters_properties_typeProperties_url": {
-						"value": "[parameters('ls_candyshark_parameters_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -625,6 +655,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_candyshark_parameter_sink_accountKey": {
+						"value": "[parameters('ls_candyshark_parameter_sink_accountKey')]"
+					},
+					"ls_candyshark_parameters_accountKey": {
+						"value": "[parameters('ls_candyshark_parameters_accountKey')]"
 					},
 					"ls_candyshark_sink_accountKey": {
 						"value": "[parameters('ls_candyshark_sink_accountKey')]"
@@ -680,11 +716,11 @@
 					"ls_unzip_accountKey": {
 						"value": "[parameters('ls_unzip_accountKey')]"
 					},
-					"ls_unzip_snk_accountKey": {
-						"value": "[parameters('ls_unzip_snk_accountKey')]"
+					"ls_candyshark_parameter_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_candyshark_parameter_sink_properties_typeProperties_url')]"
 					},
-					"ls_unzip_sorce_accountKey": {
-						"value": "[parameters('ls_unzip_sorce_accountKey')]"
+					"ls_candyshark_parameters_properties_typeProperties_url": {
+						"value": "[parameters('ls_candyshark_parameters_properties_typeProperties_url')]"
 					},
 					"ls_candyshark_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_sink_properties_typeProperties_url')]"
@@ -775,12 +811,6 @@
 					},
 					"ls_unzip_properties_typeProperties_url": {
 						"value": "[parameters('ls_unzip_properties_typeProperties_url')]"
-					},
-					"ls_unzip_snk_properties_typeProperties_url": {
-						"value": "[parameters('ls_unzip_snk_properties_typeProperties_url')]"
-					},
-					"ls_unzip_sorce_properties_typeProperties_url": {
-						"value": "[parameters('ls_unzip_sorce_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -802,11 +832,23 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ls_unzip_snk_accountKey": {
+						"value": "[parameters('ls_unzip_snk_accountKey')]"
+					},
+					"ls_unzip_sorce_accountKey": {
+						"value": "[parameters('ls_unzip_sorce_accountKey')]"
+					},
 					"ls_unzip_znk_accountKey": {
 						"value": "[parameters('ls_unzip_znk_accountKey')]"
 					},
 					"lssoruce_accountKey": {
 						"value": "[parameters('lssoruce_accountKey')]"
+					},
+					"ls_unzip_snk_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_snk_properties_typeProperties_url')]"
+					},
+					"ls_unzip_sorce_properties_typeProperties_url": {
+						"value": "[parameters('ls_unzip_sorce_properties_typeProperties_url')]"
 					},
 					"ls_unzip_znk_properties_typeProperties_url": {
 						"value": "[parameters('ls_unzip_znk_properties_typeProperties_url')]"

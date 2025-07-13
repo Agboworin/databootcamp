@@ -50,10 +50,16 @@
 		"ls_4staging_adls_accountKey": {
 			"value": ""
 		},
+		"ls_Candyshark_parameter_source_accountKey": {
+			"value": ""
+		},
 		"ls_bukcopy_sink_accountKey": {
 			"value": ""
 		},
 		"ls_candyshark_accountKey": {
+			"value": ""
+		},
+		"ls_candyshark_db_sink_password": {
 			"value": ""
 		},
 		"ls_candyshark_parameter_accountKey": {
@@ -206,11 +212,23 @@
 		"ls_4staging_adls_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_Candyshark_parameter_source_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_candyshark_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ls_candyshark_db_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
 		},
 		"ls_candyshark_parameter_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
