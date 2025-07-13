@@ -107,6 +107,9 @@
 		"ls_getmetadata_accountKey": {
 			"value": ""
 		},
+		"ls_parameter2_sink_password": {
+			"value": ""
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"value": ""
 		},
@@ -310,6 +313,15 @@
 		},
 		"ls_getmetadata_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_parameter2_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_parameter2_sink_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_parameter2_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
 		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"

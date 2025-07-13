@@ -143,6 +143,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_getmetadata'"
 		},
+		"ls_parameter2_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_parameter2_sink'"
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_parquetfile_sink'"
@@ -415,6 +419,18 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_parameter2_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_parameter2_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"ls_parameter2_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -504,7 +520,7 @@
 							{
 								"activity": "Getmetadata_candyshary",
 								"dependencyConditions": [
-									"Skipped"
+									"Succeeded"
 								]
 							}
 						],
@@ -574,7 +590,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"Tablename": {
-													"value": "@item().name",
+													"value": "@replace(item().name, '.CSV','')",
 													"type": "Expression"
 												}
 											}
@@ -931,6 +947,56 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_function_salesscv')]",
 				"[concat(variables('factoryId'), '/datasets/ds_function_sink')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline_parameter2')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Get Metadata_Candyshark_para2",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ds_candy_para2",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							},
+							"formatSettings": {
+								"type": "DelimitedTextReadSettings"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "coordinated pipelines"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ds_candy_para2')]"
 			]
 		},
 		{
@@ -1705,6 +1771,34 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ds_candy_para2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_adlscopy",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/CandyShack",
+						"fileSystem": "staging"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_adlscopy')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ds_candyshark_db_sink')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1722,6 +1816,7 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
+					"schema": "SalesLT",
 					"table": {
 						"value": "@dataset().Tablename",
 						"type": "Expression"
@@ -2964,6 +3059,28 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_getmetadata_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_parameter2_sink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('ls_parameter2_sink_properties_typeProperties_server')]",
+					"database": "[parameters('ls_parameter2_sink_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_parameter2_sink_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_parameter2_sink_password')]"
 					}
 				}
 			},

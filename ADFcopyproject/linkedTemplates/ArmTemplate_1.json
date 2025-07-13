@@ -63,6 +63,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_getmetadata'"
 		},
+		"ls_parameter2_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_parameter2_sink'"
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_parquetfile_sink'"
@@ -82,10 +86,6 @@
 		"ls_to_adls_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_to_adls'"
-		},
-		"ls_unzip_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_unzip'"
 		},
 		"ls_candyshark_parameter_sink_properties_typeProperties_url": {
 			"type": "string",
@@ -191,6 +191,18 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_parameter2_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_parameter2_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_classactivity"
+		},
+		"ls_parameter2_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -208,10 +220,6 @@
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_to_adls_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
-		},
-		"ls_unzip_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		}
@@ -489,6 +497,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_parameter2_sink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('ls_parameter2_sink_properties_typeProperties_server')]",
+					"database": "[parameters('ls_parameter2_sink_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_parameter2_sink_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_parameter2_sink_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_parquetfile_sink')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -568,23 +598,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_to_adls_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_unzip')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ls_unzip_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ls_unzip_accountKey')]"
 					}
 				}
 			},
