@@ -1,0 +1,16 @@
+{
+	"name": "ds_TotalSalesUSD_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_TotalSalesUSD_sink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Currency_Conversion"
+		}
+	}
+}

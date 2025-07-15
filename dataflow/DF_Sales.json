@@ -1,0 +1,107 @@
+{
+	"name": "DF_Sales",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_currencyconversion_sorce",
+						"type": "DatasetReference"
+					},
+					"name": "currencycoversion"
+				},
+				{
+					"linkedService": {
+						"referenceName": "ls_exchangeRate_souce",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ExchangeRate"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_TotalSalesUSD_sink",
+						"type": "DatasetReference"
+					},
+					"name": "Reposirtorytodada"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filteroutMonthTotal"
+				},
+				{
+					"name": "filterToCurrency"
+				},
+				{
+					"name": "TotalSalesinUSD"
+				},
+				{
+					"name": "combining2tables"
+				},
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Period as date,",
+				"          Product as string,",
+				"          {Unit Price} as double,",
+				"          Currency as string,",
+				"          {Units Sold} as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> currencycoversion",
+				"source(output(",
+				"          FromCurrency as string,",
+				"          ToCurrency as string,",
+				"          Date as date,",
+				"          ExchangeRate as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'excel',",
+				"     fileSystem: 'staging',",
+				"     folderPath: 'Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData',",
+				"     fileName: 'ExchangeRates.xlsx',",
+				"     sheetName: 'Sheet1',",
+				"     firstRowAsHeader: true) ~> ExchangeRate",
+				"currencycoversion filter(Product!='Month Total') ~> filteroutMonthTotal",
+				"ExchangeRate filter(ToCurrency=='USD') ~> filterToCurrency",
+				"combining2tables derive(TotalSalesinUSD = round({Unit Price}*{Units Sold}*ExchangeRate,2)) ~> TotalSalesinUSD",
+				"filteroutMonthTotal, filterToCurrency lookup(Period == Date",
+				"     && Currency == FromCurrency,",
+				"     multiple: false,",
+				"     pickup: 'any',",
+				"     broadcast: 'auto')~> combining2tables",
+				"TotalSalesinUSD select(mapColumn(",
+				"          Date,",
+				"          Product,",
+				"          {Unit Price},",
+				"          {Units Sold},",
+				"          Currency,",
+				"          ToCurrency,",
+				"          ExchangeRate,",
+				"          TotalSalesinUSD",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> Reposirtorytodada"
+			]
+		}
+	}
+}
