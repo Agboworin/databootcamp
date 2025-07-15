@@ -17,6 +17,9 @@
 		"LS_data_to_dedicatedslqpl_password": {
 			"value": ""
 		},
+		"Ls_TotalSalesUSD_sink_password": {
+			"value": ""
+		},
 		"Ls_candyshark_paramater_source_accountKey": {
 			"value": ""
 		},
@@ -77,6 +80,9 @@
 		"ls_candyshark_source_accountKey": {
 			"value": ""
 		},
+		"ls_convert_currency_accountKey": {
+			"value": ""
+		},
 		"ls_copy_db_candyshark_tables_password": {
 			"value": ""
 		},
@@ -101,6 +107,18 @@
 		"ls_csvfile_source_accountKey": {
 			"value": ""
 		},
+		"ls_currencyconver_soruce_accountKey": {
+			"value": ""
+		},
+		"ls_currencyconversio_accountKey": {
+			"value": ""
+		},
+		"ls_currencyconversiom_accountKey": {
+			"value": ""
+		},
+		"ls_currencyconversion_accountKey": {
+			"value": ""
+		},
 		"ls_db_parameters_password": {
 			"value": ""
 		},
@@ -108,6 +126,18 @@
 			"value": ""
 		},
 		"ls_db_sink_swttrtfile_password": {
+			"value": ""
+		},
+		"ls_exchamge_rate_accountKey": {
+			"value": ""
+		},
+		"ls_exchangeRate_souce_accountKey": {
+			"value": ""
+		},
+		"ls_exchnagerate_accountKey": {
+			"value": ""
+		},
+		"ls_exchnagerate_conversion_accountKey": {
 			"value": ""
 		},
 		"ls_function_salesscv_accountKey": {
@@ -168,6 +198,15 @@
 			"value": "ddsqlprojectpractice"
 		},
 		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_userName": {
 			"value": "Sqladmin"
 		},
 		"Ls_candyshark_paramater_source_properties_typeProperties_url": {
@@ -257,6 +296,9 @@
 		"ls_candyshark_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_convert_currency_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_copy_db_candyshark_tables_properties_typeProperties_server": {
 			"value": "svr-copyproject.database.windows.net"
 		},
@@ -311,6 +353,18 @@
 		"ls_csvfile_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_currencyconver_soruce_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversio_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversiom_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversion_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_db_parameters_properties_typeProperties_server": {
 			"value": "svr-copyproject.database.windows.net"
 		},
@@ -337,6 +391,18 @@
 		},
 		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
 			"value": "Sqladmin"
+		},
+		"ls_exchamge_rate_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchangeRate_souce_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_conversion_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_function_salesscv_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"

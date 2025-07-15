@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_data_to_dedicatedslqpl'"
 		},
+		"Ls_TotalSalesUSD_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Ls_TotalSalesUSD_sink'"
+		},
 		"Ls_candyshark_paramater_source_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Ls_candyshark_paramater_source'"
@@ -103,6 +107,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark_source'"
 		},
+		"ls_convert_currency_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_convert_currency'"
+		},
 		"ls_copy_db_candyshark_tables_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_copy_db_candyshark_tables'"
@@ -135,6 +143,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_csvfile_source'"
 		},
+		"ls_currencyconver_soruce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconver_soruce'"
+		},
+		"ls_currencyconversio_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversio'"
+		},
+		"ls_currencyconversiom_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversiom'"
+		},
+		"ls_currencyconversion_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversion'"
+		},
 		"ls_db_parameters_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_db_parameters'"
@@ -146,6 +170,22 @@
 		"ls_db_sink_swttrtfile_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_db_sink_swttrtfile'"
+		},
+		"ls_exchamge_rate_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchamge_rate'"
+		},
+		"ls_exchangeRate_souce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchangeRate_souce'"
+		},
+		"ls_exchnagerate_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchnagerate'"
+		},
+		"ls_exchnagerate_conversion_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchnagerate_conversion'"
 		},
 		"ls_function_salesscv_accountKey": {
 			"type": "secureString",
@@ -224,6 +264,18 @@
 			"defaultValue": "ddsqlprojectpractice"
 		},
 		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Sqladmin"
 		},
@@ -343,6 +395,10 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_convert_currency_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_copy_db_candyshark_tables_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "svr-copyproject.database.windows.net"
@@ -415,6 +471,22 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_currencyconver_soruce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversio_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversiom_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversion_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_db_parameters_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "svr-copyproject.database.windows.net"
@@ -450,6 +522,22 @@
 		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Sqladmin"
+		},
+		"ls_exchamge_rate_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchangeRate_souce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_conversion_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_function_salesscv_properties_typeProperties_url": {
 			"type": "string",
@@ -550,6 +638,9 @@
 					"LS_data_to_dedicatedslqpl_password": {
 						"value": "[parameters('LS_data_to_dedicatedslqpl_password')]"
 					},
+					"Ls_TotalSalesUSD_sink_password": {
+						"value": "[parameters('Ls_TotalSalesUSD_sink_password')]"
+					},
 					"Ls_candyshark_paramater_source_accountKey": {
 						"value": "[parameters('Ls_candyshark_paramater_source_accountKey')]"
 					},
@@ -595,9 +686,6 @@
 					"ls_candyshark_db_sink_password": {
 						"value": "[parameters('ls_candyshark_db_sink_password')]"
 					},
-					"ls_candyshark_parameter_accountKey": {
-						"value": "[parameters('ls_candyshark_parameter_accountKey')]"
-					},
 					"AzureSqlDatabase1_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
 					},
@@ -618,6 +706,15 @@
 					},
 					"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
 						"value": "[parameters('LS_data_to_dedicatedslqpl_properties_typeProperties_userName')]"
+					},
+					"Ls_TotalSalesUSD_sink_properties_typeProperties_server": {
+						"value": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_server')]"
+					},
+					"Ls_TotalSalesUSD_sink_properties_typeProperties_database": {
+						"value": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_database')]"
+					},
+					"Ls_TotalSalesUSD_sink_properties_typeProperties_userName": {
+						"value": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_userName')]"
 					},
 					"Ls_candyshark_paramater_source_properties_typeProperties_url": {
 						"value": "[parameters('Ls_candyshark_paramater_source_properties_typeProperties_url')]"
@@ -690,9 +787,6 @@
 					},
 					"ls_candyshark_db_sink_properties_typeProperties_userName": {
 						"value": "[parameters('ls_candyshark_db_sink_properties_typeProperties_userName')]"
-					},
-					"ls_candyshark_parameter_properties_typeProperties_url": {
-						"value": "[parameters('ls_candyshark_parameter_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -712,6 +806,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ls_candyshark_parameter_accountKey": {
+						"value": "[parameters('ls_candyshark_parameter_accountKey')]"
+					},
 					"ls_candyshark_parameter_sink_accountKey": {
 						"value": "[parameters('ls_candyshark_parameter_sink_accountKey')]"
 					},
@@ -723,6 +820,9 @@
 					},
 					"ls_candyshark_source_accountKey": {
 						"value": "[parameters('ls_candyshark_source_accountKey')]"
+					},
+					"ls_convert_currency_accountKey": {
+						"value": "[parameters('ls_convert_currency_accountKey')]"
 					},
 					"ls_copy_db_candyshark_tables_password": {
 						"value": "[parameters('ls_copy_db_candyshark_tables_password')]"
@@ -748,29 +848,26 @@
 					"ls_csvfile_source_accountKey": {
 						"value": "[parameters('ls_csvfile_source_accountKey')]"
 					},
+					"ls_currencyconver_soruce_accountKey": {
+						"value": "[parameters('ls_currencyconver_soruce_accountKey')]"
+					},
+					"ls_currencyconversio_accountKey": {
+						"value": "[parameters('ls_currencyconversio_accountKey')]"
+					},
+					"ls_currencyconversiom_accountKey": {
+						"value": "[parameters('ls_currencyconversiom_accountKey')]"
+					},
+					"ls_currencyconversion_accountKey": {
+						"value": "[parameters('ls_currencyconversion_accountKey')]"
+					},
 					"ls_db_parameters_password": {
 						"value": "[parameters('ls_db_parameters_password')]"
 					},
 					"ls_db_sink_password": {
 						"value": "[parameters('ls_db_sink_password')]"
 					},
-					"ls_db_sink_swttrtfile_password": {
-						"value": "[parameters('ls_db_sink_swttrtfile_password')]"
-					},
-					"ls_function_salesscv_accountKey": {
-						"value": "[parameters('ls_function_salesscv_accountKey')]"
-					},
-					"ls_getmetadata_accountKey": {
-						"value": "[parameters('ls_getmetadata_accountKey')]"
-					},
-					"ls_parameter2_sink_password": {
-						"value": "[parameters('ls_parameter2_sink_password')]"
-					},
-					"ls_parquetfile_sink_accountKey": {
-						"value": "[parameters('ls_parquetfile_sink_accountKey')]"
-					},
-					"ls_salesLT_sink_accountKey": {
-						"value": "[parameters('ls_salesLT_sink_accountKey')]"
+					"ls_candyshark_parameter_properties_typeProperties_url": {
+						"value": "[parameters('ls_candyshark_parameter_properties_typeProperties_url')]"
 					},
 					"ls_candyshark_parameter_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_parameter_sink_properties_typeProperties_url')]"
@@ -783,6 +880,9 @@
 					},
 					"ls_candyshark_source_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_source_properties_typeProperties_url')]"
+					},
+					"ls_convert_currency_properties_typeProperties_url": {
+						"value": "[parameters('ls_convert_currency_properties_typeProperties_url')]"
 					},
 					"ls_copy_db_candyshark_tables_properties_typeProperties_server": {
 						"value": "[parameters('ls_copy_db_candyshark_tables_properties_typeProperties_server')]"
@@ -838,6 +938,18 @@
 					"ls_csvfile_source_properties_typeProperties_url": {
 						"value": "[parameters('ls_csvfile_source_properties_typeProperties_url')]"
 					},
+					"ls_currencyconver_soruce_properties_typeProperties_url": {
+						"value": "[parameters('ls_currencyconver_soruce_properties_typeProperties_url')]"
+					},
+					"ls_currencyconversio_properties_typeProperties_url": {
+						"value": "[parameters('ls_currencyconversio_properties_typeProperties_url')]"
+					},
+					"ls_currencyconversiom_properties_typeProperties_url": {
+						"value": "[parameters('ls_currencyconversiom_properties_typeProperties_url')]"
+					},
+					"ls_currencyconversion_properties_typeProperties_url": {
+						"value": "[parameters('ls_currencyconversion_properties_typeProperties_url')]"
+					},
 					"ls_db_parameters_properties_typeProperties_server": {
 						"value": "[parameters('ls_db_parameters_properties_typeProperties_server')]"
 					},
@@ -855,36 +967,6 @@
 					},
 					"ls_db_sink_properties_typeProperties_userName": {
 						"value": "[parameters('ls_db_sink_properties_typeProperties_userName')]"
-					},
-					"ls_db_sink_swttrtfile_properties_typeProperties_server": {
-						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_server')]"
-					},
-					"ls_db_sink_swttrtfile_properties_typeProperties_database": {
-						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_database')]"
-					},
-					"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
-						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_userName')]"
-					},
-					"ls_function_salesscv_properties_typeProperties_url": {
-						"value": "[parameters('ls_function_salesscv_properties_typeProperties_url')]"
-					},
-					"ls_getmetadata_properties_typeProperties_url": {
-						"value": "[parameters('ls_getmetadata_properties_typeProperties_url')]"
-					},
-					"ls_parameter2_sink_properties_typeProperties_server": {
-						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_server')]"
-					},
-					"ls_parameter2_sink_properties_typeProperties_database": {
-						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_database')]"
-					},
-					"ls_parameter2_sink_properties_typeProperties_userName": {
-						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_userName')]"
-					},
-					"ls_parquetfile_sink_properties_typeProperties_url": {
-						"value": "[parameters('ls_parquetfile_sink_properties_typeProperties_url')]"
-					},
-					"ls_salesLT_sink_properties_typeProperties_url": {
-						"value": "[parameters('ls_salesLT_sink_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -905,6 +987,36 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_db_sink_swttrtfile_password": {
+						"value": "[parameters('ls_db_sink_swttrtfile_password')]"
+					},
+					"ls_exchamge_rate_accountKey": {
+						"value": "[parameters('ls_exchamge_rate_accountKey')]"
+					},
+					"ls_exchangeRate_souce_accountKey": {
+						"value": "[parameters('ls_exchangeRate_souce_accountKey')]"
+					},
+					"ls_exchnagerate_accountKey": {
+						"value": "[parameters('ls_exchnagerate_accountKey')]"
+					},
+					"ls_exchnagerate_conversion_accountKey": {
+						"value": "[parameters('ls_exchnagerate_conversion_accountKey')]"
+					},
+					"ls_function_salesscv_accountKey": {
+						"value": "[parameters('ls_function_salesscv_accountKey')]"
+					},
+					"ls_getmetadata_accountKey": {
+						"value": "[parameters('ls_getmetadata_accountKey')]"
+					},
+					"ls_parameter2_sink_password": {
+						"value": "[parameters('ls_parameter2_sink_password')]"
+					},
+					"ls_parquetfile_sink_accountKey": {
+						"value": "[parameters('ls_parquetfile_sink_accountKey')]"
+					},
+					"ls_salesLT_sink_accountKey": {
+						"value": "[parameters('ls_salesLT_sink_accountKey')]"
 					},
 					"ls_sink_accountKey": {
 						"value": "[parameters('ls_sink_accountKey')]"
@@ -929,6 +1041,48 @@
 					},
 					"lssoruce_accountKey": {
 						"value": "[parameters('lssoruce_accountKey')]"
+					},
+					"ls_db_sink_swttrtfile_properties_typeProperties_server": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_server')]"
+					},
+					"ls_db_sink_swttrtfile_properties_typeProperties_database": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_database')]"
+					},
+					"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
+						"value": "[parameters('ls_db_sink_swttrtfile_properties_typeProperties_userName')]"
+					},
+					"ls_exchamge_rate_properties_typeProperties_url": {
+						"value": "[parameters('ls_exchamge_rate_properties_typeProperties_url')]"
+					},
+					"ls_exchangeRate_souce_properties_typeProperties_url": {
+						"value": "[parameters('ls_exchangeRate_souce_properties_typeProperties_url')]"
+					},
+					"ls_exchnagerate_properties_typeProperties_url": {
+						"value": "[parameters('ls_exchnagerate_properties_typeProperties_url')]"
+					},
+					"ls_exchnagerate_conversion_properties_typeProperties_url": {
+						"value": "[parameters('ls_exchnagerate_conversion_properties_typeProperties_url')]"
+					},
+					"ls_function_salesscv_properties_typeProperties_url": {
+						"value": "[parameters('ls_function_salesscv_properties_typeProperties_url')]"
+					},
+					"ls_getmetadata_properties_typeProperties_url": {
+						"value": "[parameters('ls_getmetadata_properties_typeProperties_url')]"
+					},
+					"ls_parameter2_sink_properties_typeProperties_server": {
+						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_server')]"
+					},
+					"ls_parameter2_sink_properties_typeProperties_database": {
+						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_database')]"
+					},
+					"ls_parameter2_sink_properties_typeProperties_userName": {
+						"value": "[parameters('ls_parameter2_sink_properties_typeProperties_userName')]"
+					},
+					"ls_parquetfile_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_parquetfile_sink_properties_typeProperties_url')]"
+					},
+					"ls_salesLT_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_salesLT_sink_properties_typeProperties_url')]"
 					},
 					"ls_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_sink_properties_typeProperties_url')]"

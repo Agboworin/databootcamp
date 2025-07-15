@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_data_to_dedicatedslqpl'"
 		},
+		"Ls_TotalSalesUSD_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Ls_TotalSalesUSD_sink'"
+		},
 		"Ls_candyshark_paramater_source_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Ls_candyshark_paramater_source'"
@@ -103,6 +107,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark_source'"
 		},
+		"ls_convert_currency_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_convert_currency'"
+		},
 		"ls_copy_db_candyshark_tables_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_copy_db_candyshark_tables'"
@@ -135,6 +143,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_csvfile_source'"
 		},
+		"ls_currencyconver_soruce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconver_soruce'"
+		},
+		"ls_currencyconversio_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversio'"
+		},
+		"ls_currencyconversiom_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversiom'"
+		},
+		"ls_currencyconversion_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversion'"
+		},
 		"ls_db_parameters_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_db_parameters'"
@@ -146,6 +170,22 @@
 		"ls_db_sink_swttrtfile_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_db_sink_swttrtfile'"
+		},
+		"ls_exchamge_rate_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchamge_rate'"
+		},
+		"ls_exchangeRate_souce_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchangeRate_souce'"
+		},
+		"ls_exchnagerate_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchnagerate'"
+		},
+		"ls_exchnagerate_conversion_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_exchnagerate_conversion'"
 		},
 		"ls_function_salesscv_accountKey": {
 			"type": "secureString",
@@ -224,6 +264,18 @@
 			"defaultValue": "ddsqlprojectpractice"
 		},
 		"LS_data_to_dedicatedslqpl_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"Ls_TotalSalesUSD_sink_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Sqladmin"
 		},
@@ -343,6 +395,10 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_convert_currency_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_copy_db_candyshark_tables_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "svr-copyproject.database.windows.net"
@@ -415,6 +471,22 @@
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
+		"ls_currencyconver_soruce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversio_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversiom_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_currencyconversion_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"ls_db_parameters_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "svr-copyproject.database.windows.net"
@@ -450,6 +522,22 @@
 		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Sqladmin"
+		},
+		"ls_exchamge_rate_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchangeRate_souce_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_exchnagerate_conversion_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_function_salesscv_properties_typeProperties_url": {
 			"type": "string",
@@ -1826,6 +1914,27 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ds_TotalSalesUSD_sink')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Ls_TotalSalesUSD_sink",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Currency_Conversion"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Ls_TotalSalesUSD_sink')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ds_bd_sink')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2333,6 +2442,54 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ds_currencyconversion_sorce')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_currencyconver_soruce",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "SALES",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "Sales Apr-Sep 2020.xlsx",
+						"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/JollyGood",
+						"fileSystem": "staging"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "Period",
+						"type": "String"
+					},
+					{
+						"name": "Product",
+						"type": "String"
+					},
+					{
+						"name": "Unit Price",
+						"type": "String"
+					},
+					{
+						"name": "Currency",
+						"type": "String"
+					},
+					{
+						"name": "Units Sold",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_currencyconver_soruce')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ds_db_candyshark_tables')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2761,6 +2918,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Ls_TotalSalesUSD_sink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_server')]",
+					"database": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('Ls_TotalSalesUSD_sink_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Ls_TotalSalesUSD_sink_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Ls_candyshark_paramater_source')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -3122,6 +3301,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_convert_currency')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_convert_currency_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_convert_currency_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_copy_db_candyshark_tables')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -3283,6 +3479,74 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ls_currencyconver_soruce')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_currencyconver_soruce_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_currencyconver_soruce_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_currencyconversio')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_currencyconversio_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_currencyconversio_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_currencyconversiom')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_currencyconversiom_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_currencyconversiom_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_currencyconversion')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_currencyconversion_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_currencyconversion_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_db_parameters')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -3343,6 +3607,74 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('ls_db_sink_swttrtfile_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_exchamge_rate')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_exchamge_rate_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_exchamge_rate_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_exchangeRate_souce')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_exchangeRate_souce_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_exchangeRate_souce_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_exchnagerate')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_exchnagerate_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_exchnagerate_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_exchnagerate_conversion')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_exchnagerate_conversion_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_exchnagerate_conversion_accountKey')]"
 					}
 				}
 			},
@@ -3573,6 +3905,120 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DF_Sales')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "ds_currencyconversion_sorce",
+								"type": "DatasetReference"
+							},
+							"name": "currencycoversion"
+						},
+						{
+							"linkedService": {
+								"referenceName": "ls_exchangeRate_souce",
+								"type": "LinkedServiceReference"
+							},
+							"name": "ExchangeRate"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "ds_TotalSalesUSD_sink",
+								"type": "DatasetReference"
+							},
+							"name": "Reposirtorytodada"
+						}
+					],
+					"transformations": [
+						{
+							"name": "filteroutMonthTotal"
+						},
+						{
+							"name": "filterToCurrency"
+						},
+						{
+							"name": "TotalSalesinUSD"
+						},
+						{
+							"name": "combining2tables"
+						},
+						{
+							"name": "select1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          Period as date,",
+						"          Product as string,",
+						"          {Unit Price} as double,",
+						"          Currency as string,",
+						"          {Units Sold} as integer",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> currencycoversion",
+						"source(output(",
+						"          FromCurrency as string,",
+						"          ToCurrency as string,",
+						"          Date as date,",
+						"          ExchangeRate as double",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false,",
+						"     format: 'excel',",
+						"     fileSystem: 'staging',",
+						"     folderPath: 'Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData',",
+						"     fileName: 'ExchangeRates.xlsx',",
+						"     sheetName: 'Sheet1',",
+						"     firstRowAsHeader: true) ~> ExchangeRate",
+						"currencycoversion filter(Product!='Month Total') ~> filteroutMonthTotal",
+						"ExchangeRate filter(ToCurrency=='USD') ~> filterToCurrency",
+						"combining2tables derive(TotalSalesinUSD = round({Unit Price}*{Units Sold}*ExchangeRate,2)) ~> TotalSalesinUSD",
+						"filteroutMonthTotal, filterToCurrency lookup(Period == Date",
+						"     && Currency == FromCurrency,",
+						"     multiple: false,",
+						"     pickup: 'any',",
+						"     broadcast: 'auto')~> combining2tables",
+						"TotalSalesinUSD select(mapColumn(",
+						"          Date,",
+						"          Product,",
+						"          {Unit Price},",
+						"          {Units Sold},",
+						"          Currency,",
+						"          ToCurrency,",
+						"          ExchangeRate,",
+						"          TotalSalesinUSD",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select1",
+						"select1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> Reposirtorytodada"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ds_currencyconversion_sorce')]",
+				"[concat(variables('factoryId'), '/linkedServices/ls_exchangeRate_souce')]",
+				"[concat(variables('factoryId'), '/datasets/ds_TotalSalesUSD_sink')]"
+			]
 		}
 	]
 }
