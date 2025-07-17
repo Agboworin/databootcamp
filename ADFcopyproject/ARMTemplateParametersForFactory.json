@@ -155,6 +155,12 @@
 		"ls_salesLT_sink_accountKey": {
 			"value": ""
 		},
+		"ls_sales_sink_password": {
+			"value": ""
+		},
+		"ls_salesfile_source_accountKey": {
+			"value": ""
+		},
 		"ls_sink_accountKey": {
 			"value": ""
 		},
@@ -423,6 +429,18 @@
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_salesLT_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sales_sink_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_sales_sink_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ls_sales_sink_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
+		"ls_salesfile_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_sink_properties_typeProperties_url": {

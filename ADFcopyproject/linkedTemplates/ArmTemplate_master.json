@@ -207,6 +207,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_salesLT_sink'"
 		},
+		"ls_sales_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sales_sink'"
+		},
+		"ls_salesfile_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_salesfile_source'"
+		},
 		"ls_sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_sink'"
@@ -564,6 +572,22 @@
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_salesLT_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_sales_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "svr-copyproject.database.windows.net"
+		},
+		"ls_sales_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbclassparameter"
+		},
+		"ls_sales_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladmin"
+		},
+		"ls_salesfile_source_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -1018,6 +1042,12 @@
 					"ls_salesLT_sink_accountKey": {
 						"value": "[parameters('ls_salesLT_sink_accountKey')]"
 					},
+					"ls_sales_sink_password": {
+						"value": "[parameters('ls_sales_sink_password')]"
+					},
+					"ls_salesfile_source_accountKey": {
+						"value": "[parameters('ls_salesfile_source_accountKey')]"
+					},
 					"ls_sink_accountKey": {
 						"value": "[parameters('ls_sink_accountKey')]"
 					},
@@ -1083,6 +1113,18 @@
 					},
 					"ls_salesLT_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_salesLT_sink_properties_typeProperties_url')]"
+					},
+					"ls_sales_sink_properties_typeProperties_server": {
+						"value": "[parameters('ls_sales_sink_properties_typeProperties_server')]"
+					},
+					"ls_sales_sink_properties_typeProperties_database": {
+						"value": "[parameters('ls_sales_sink_properties_typeProperties_database')]"
+					},
+					"ls_sales_sink_properties_typeProperties_userName": {
+						"value": "[parameters('ls_sales_sink_properties_typeProperties_userName')]"
+					},
+					"ls_salesfile_source_properties_typeProperties_url": {
+						"value": "[parameters('ls_salesfile_source_properties_typeProperties_url')]"
 					},
 					"ls_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_sink_properties_typeProperties_url')]"
@@ -1152,6 +1194,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "ADFcopyproject_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_4')]"
 			]
 		}
 	]
