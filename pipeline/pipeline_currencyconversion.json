@@ -1,9 +1,9 @@
 {
-	"name": "pipeline_DF",
+	"name": "pipeline_currencyconversion",
 	"properties": {
 		"activities": [
 			{
-				"name": "DF_Sales",
+				"name": "dataflowConversion",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "DF_Sales",
+						"referenceName": "dataflowConversion",
 						"type": "DataFlowReference"
 					},
 					"compute": {
