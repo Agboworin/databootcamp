@@ -1,0 +1,110 @@
+{
+	"name": "dataflowConversion",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_sales_source",
+						"type": "DatasetReference"
+					},
+					"name": "CurrencyConversion"
+				},
+				{
+					"linkedService": {
+						"referenceName": "ls_salesfile_source",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ExchnageRate"
+				}
+			],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "ls_sales_sink",
+						"type": "LinkedServiceReference"
+					},
+					"name": "sink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filterMonthTotal"
+				},
+				{
+					"name": "filterourothercurrencies"
+				},
+				{
+					"name": "lookup2Files"
+				},
+				{
+					"name": "derivedesirecoulm"
+				},
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Period as date,",
+				"          Product as string,",
+				"          {Unit Price} as double,",
+				"          Currency as string,",
+				"          {Units Sold} as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> CurrencyConversion",
+				"source(output(",
+				"          FromCurrency as string,",
+				"          ToCurrency as string,",
+				"          Date as date,",
+				"          ExchangeRate as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'excel',",
+				"     fileSystem: 'staging',",
+				"     folderPath: 'Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData',",
+				"     fileName: 'ExchangeRates.xlsx',",
+				"     sheetName: 'Sheet1',",
+				"     firstRowAsHeader: true) ~> ExchnageRate",
+				"CurrencyConversion filter(Product!='Month Total') ~> filterMonthTotal",
+				"ExchnageRate filter(ToCurrency=='USD') ~> filterourothercurrencies",
+				"filterMonthTotal, filterourothercurrencies lookup(Period == Date",
+				"     && Currency == FromCurrency,",
+				"     multiple: false,",
+				"     pickup: 'any',",
+				"     broadcast: 'auto')~> lookup2Files",
+				"lookup2Files derive(TotalSalesSold = round({Unit Price}*{Units Sold}*ExchangeRate,2)) ~> derivedesirecoulm",
+				"derivedesirecoulm select(mapColumn(",
+				"          Date,",
+				"          Product,",
+				"          {Unit Price},",
+				"          Currency,",
+				"          {Units Sold},",
+				"          ToCurrency,",
+				"          ExchangeRate,",
+				"          TotalSalesSold",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'table',",
+				"     store: 'sqlserver',",
+				"     schemaName: 'Currency',",
+				"     tableName: 'conversion',",
+				"     insertable: true,",
+				"     updateable: false,",
+				"     deletable: false,",
+				"     upsertable: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink"
+			]
+		}
+	}
+}
