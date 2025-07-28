@@ -1,0 +1,19 @@
+{
+	"name": "Metadata_dbactivity_rmp_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dbactivity",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Metadata_dbactivity_rmp_20250728"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "MainControlTable_rmp"
+		}
+	}
+}
