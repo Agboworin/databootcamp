@@ -137,6 +137,9 @@
 		"ls_db_sink_swttrtfile_password": {
 			"value": ""
 		},
+		"ls_dbactivity_password": {
+			"value": ""
+		},
 		"ls_exchamge_rate_accountKey": {
 			"value": ""
 		},
@@ -430,6 +433,15 @@
 		},
 		"ls_db_sink_swttrtfile_properties_typeProperties_userName": {
 			"value": "Sqladmin"
+		},
+		"ls_dbactivity_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_dbactivity_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_dbactivity_properties_typeProperties_userName": {
+			"value": "sqladmin"
 		},
 		"ls_exchamge_rate_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
