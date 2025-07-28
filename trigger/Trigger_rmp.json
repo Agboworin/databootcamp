@@ -2,7 +2,7 @@
 	"name": "Trigger_rmp",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "Metadata_dbactivity_rmp_TopLevel",
