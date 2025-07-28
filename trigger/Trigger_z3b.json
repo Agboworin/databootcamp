@@ -2,7 +2,7 @@
 	"name": "Trigger_z3b",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "MetadataDrivenCopyTask_z3b_TopLevel",
