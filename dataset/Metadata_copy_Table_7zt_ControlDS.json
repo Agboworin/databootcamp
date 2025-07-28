@@ -1,24 +1,19 @@
 {
-	"name": "ds_db_candyshark_tables",
+	"name": "Metadata_copy_Table_7zt_ControlDS",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_copy_db_candyshark_tables",
+			"referenceName": "ls_parameter_SalesLT_soruce",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"TableName": {
-				"type": "string"
-			}
+		"folder": {
+			"name": "Metadata_copy_Table_7zt_20250725"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "SalesLT",
-			"table": {
-				"value": "@dataset().TableName",
-				"type": "Expression"
-			}
+			"table": "MainControlTable_7zt"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

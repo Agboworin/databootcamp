@@ -123,6 +123,8 @@
 		"folder": {
 			"name": "Function"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2025-07-13T10:52:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -35,6 +36,8 @@
 		"folder": {
 			"name": "coordinated pipelines"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2025-07-13T10:52:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

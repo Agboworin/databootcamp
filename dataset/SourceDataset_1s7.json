@@ -1,24 +1,19 @@
 {
-	"name": "ds_getmetadata",
+	"name": "SourceDataset_1s7",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_getmetadata",
+			"referenceName": "Ls_ingest_candyshark",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/CandyShack",
 				"fileSystem": "staging"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
-		},
-		"schema": []
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

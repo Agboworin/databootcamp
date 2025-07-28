@@ -1,16 +1,19 @@
 {
-	"name": "ds_TotalSalesUSD_sink",
+	"name": "Metadata_activity_c41_ControlDS",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Ls_TotalSalesUSD_sink",
+			"referenceName": "ls_activity",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Metadata_activity_c41_20250728"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Currency_Conversion"
+			"schema": "mkting",
+			"table": "MainControlTable_c41"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

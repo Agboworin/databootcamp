@@ -27,9 +27,8 @@
 				}
 			}
 		],
-		"folder": {
-			"name": "Function"
-		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2025-07-15T22:02:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

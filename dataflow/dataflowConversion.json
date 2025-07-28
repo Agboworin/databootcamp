@@ -95,7 +95,7 @@
 				"     validateSchema: false,",
 				"     format: 'table',",
 				"     store: 'sqlserver',",
-				"     schemaName: 'dbo',",
+				"     schemaName: 'Currency',",
 				"     tableName: 'conversion',",
 				"     insertable: true,",
 				"     updateable: false,",

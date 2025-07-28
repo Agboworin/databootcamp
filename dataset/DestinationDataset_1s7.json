@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_1s7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_ingest_candyshark",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Azure data-Factory-Dataset/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/Classdata",
+				"fileSystem": "staging"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
