@@ -26,6 +26,9 @@
 		"Ls_copy_to_db_sink_password": {
 			"value": ""
 		},
+		"Ls_ingest_candyshark_accountKey": {
+			"value": ""
+		},
 		"Ls_source_accountKey": {
 			"value": ""
 		},
@@ -47,6 +50,9 @@
 		"copy_from_db_password": {
 			"value": ""
 		},
+		"ds_dbparameter_salesLT_souce_password": {
+			"value": ""
+		},
 		"linksevis_from_Azuredb_password": {
 			"value": ""
 		},
@@ -54,6 +60,9 @@
 			"value": ""
 		},
 		"ls_Candyshark_parameter_source_accountKey": {
+			"value": ""
+		},
+		"ls_activity_password": {
 			"value": ""
 		},
 		"ls_bukcopy_sink_accountKey": {
@@ -149,6 +158,9 @@
 		"ls_parameter2_sink_password": {
 			"value": ""
 		},
+		"ls_parameter_SalesLT_soruce_password": {
+			"value": ""
+		},
 		"ls_parquetfile_sink_accountKey": {
 			"value": ""
 		},
@@ -227,6 +239,9 @@
 		"Ls_copy_to_db_sink_properties_typeProperties_userName": {
 			"value": "Sqladmin"
 		},
+		"Ls_ingest_candyshark_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
 		"Ls_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -257,6 +272,15 @@
 		"copy_from_db_properties_typeProperties_userName": {
 			"value": "Sqldeuser"
 		},
+		"ds_dbparameter_salesLT_souce_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ds_dbparameter_salesLT_souce_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ds_dbparameter_salesLT_souce_properties_typeProperties_userName": {
+			"value": "Sqladmin"
+		},
 		"linksevis_from_Azuredb_properties_typeProperties_server": {
 			"value": "svr-copyproject.database.windows.net"
 		},
@@ -271,6 +295,15 @@
 		},
 		"ls_Candyshark_parameter_source_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_activity_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_activity_properties_typeProperties_database": {
+			"value": "db_classactivity"
+		},
+		"ls_activity_properties_typeProperties_userName": {
+			"value": "sqladmin"
 		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
@@ -425,6 +458,15 @@
 		"ls_parameter2_sink_properties_typeProperties_userName": {
 			"value": "Sqladmin"
 		},
+		"ls_parameter_SalesLT_soruce_properties_typeProperties_server": {
+			"value": "svr-copyproject.database.windows.net"
+		},
+		"ls_parameter_SalesLT_soruce_properties_typeProperties_database": {
+			"value": "dbclassparameter"
+		},
+		"ls_parameter_SalesLT_soruce_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
 		"ls_parquetfile_sink_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -466,6 +508,12 @@
 		},
 		"lssoruce_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"trigger_ingestN_properties_pipeline_parameters_windowStart": {
+			"value": "@trigger().outputs.windowstarttime"
+		},
+		"trigger_ingestN_properties_pipeline_parameters_windowEnd": {
+			"value": "@trigger().outputs.windowEndtime"
 		}
 	}
 }
