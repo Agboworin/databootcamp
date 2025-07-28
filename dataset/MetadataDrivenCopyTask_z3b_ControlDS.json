@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_z3b_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dbactivity",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_z3b_20250728"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "MainControlTable_z3b"
+		}
+	}
+}
