@@ -68,6 +68,9 @@
 		"ls_bukcopy_sink_accountKey": {
 			"value": ""
 		},
+		"ls_candy_incremental_table_accountKey": {
+			"value": ""
+		},
 		"ls_candyshark_accountKey": {
 			"value": ""
 		},
@@ -309,6 +312,9 @@
 			"value": "sqladmin"
 		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
+			"value": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candy_incremental_table_properties_typeProperties_url": {
 			"value": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
 		"ls_candyshark_properties_typeProperties_url": {

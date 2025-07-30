@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
 		},
+		"ls_candy_incremental_table_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_candy_incremental_table'"
+		},
 		"ls_candyshark_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark'"
@@ -83,11 +87,11 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversio'"
 		},
-		"ls_currencyconversiom_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_currencyconversiom'"
-		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candy_incremental_table_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -210,10 +214,6 @@
 		"ls_currencyconversio_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
-		},
-		"ls_currencyconversiom_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -232,6 +232,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_bukcopy_sink_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_candy_incremental_table')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_candy_incremental_table_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_candy_incremental_table_accountKey')]"
 					}
 				}
 			},
@@ -568,23 +585,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ls_currencyconversio_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_currencyconversiom')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ls_currencyconversiom_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ls_currencyconversiom_accountKey')]"
 					}
 				}
 			},

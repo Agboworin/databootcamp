@@ -91,6 +91,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_bukcopy_sink'"
 		},
+		"ls_candy_incremental_table_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_candy_incremental_table'"
+		},
 		"ls_candyshark_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_candyshark'"
@@ -412,6 +416,10 @@
 			"defaultValue": "sqladmin"
 		},
 		"ls_bukcopy_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
+		},
+		"ls_candy_incremental_table_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlstoragecopy.dfs.core.windows.net/"
 		},
@@ -919,6 +927,9 @@
 					"ls_bukcopy_sink_accountKey": {
 						"value": "[parameters('ls_bukcopy_sink_accountKey')]"
 					},
+					"ls_candy_incremental_table_accountKey": {
+						"value": "[parameters('ls_candy_incremental_table_accountKey')]"
+					},
 					"ls_candyshark_accountKey": {
 						"value": "[parameters('ls_candyshark_accountKey')]"
 					},
@@ -973,11 +984,11 @@
 					"ls_currencyconversio_accountKey": {
 						"value": "[parameters('ls_currencyconversio_accountKey')]"
 					},
-					"ls_currencyconversiom_accountKey": {
-						"value": "[parameters('ls_currencyconversiom_accountKey')]"
-					},
 					"ls_bukcopy_sink_properties_typeProperties_url": {
 						"value": "[parameters('ls_bukcopy_sink_properties_typeProperties_url')]"
+					},
+					"ls_candy_incremental_table_properties_typeProperties_url": {
+						"value": "[parameters('ls_candy_incremental_table_properties_typeProperties_url')]"
 					},
 					"ls_candyshark_properties_typeProperties_url": {
 						"value": "[parameters('ls_candyshark_properties_typeProperties_url')]"
@@ -1068,9 +1079,6 @@
 					},
 					"ls_currencyconversio_properties_typeProperties_url": {
 						"value": "[parameters('ls_currencyconversio_properties_typeProperties_url')]"
-					},
-					"ls_currencyconversiom_properties_typeProperties_url": {
-						"value": "[parameters('ls_currencyconversiom_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -1091,6 +1099,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_currencyconversiom_accountKey": {
+						"value": "[parameters('ls_currencyconversiom_accountKey')]"
 					},
 					"ls_currencyconversion_accountKey": {
 						"value": "[parameters('ls_currencyconversion_accountKey')]"
@@ -1149,8 +1160,8 @@
 					"ls_sweettreat_csvfile_accountKey": {
 						"value": "[parameters('ls_sweettreat_csvfile_accountKey')]"
 					},
-					"ls_to_adls_accountKey": {
-						"value": "[parameters('ls_to_adls_accountKey')]"
+					"ls_currencyconversiom_properties_typeProperties_url": {
+						"value": "[parameters('ls_currencyconversiom_properties_typeProperties_url')]"
 					},
 					"ls_currencyconversion_properties_typeProperties_url": {
 						"value": "[parameters('ls_currencyconversion_properties_typeProperties_url')]"
@@ -1250,9 +1261,6 @@
 					},
 					"ls_sweettreat_csvfile_properties_typeProperties_url": {
 						"value": "[parameters('ls_sweettreat_csvfile_properties_typeProperties_url')]"
-					},
-					"ls_to_adls_properties_typeProperties_url": {
-						"value": "[parameters('ls_to_adls_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -1274,6 +1282,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ls_to_adls_accountKey": {
+						"value": "[parameters('ls_to_adls_accountKey')]"
+					},
 					"ls_unzip_accountKey": {
 						"value": "[parameters('ls_unzip_accountKey')]"
 					},
@@ -1288,6 +1299,9 @@
 					},
 					"lssoruce_accountKey": {
 						"value": "[parameters('lssoruce_accountKey')]"
+					},
+					"ls_to_adls_properties_typeProperties_url": {
+						"value": "[parameters('ls_to_adls_properties_typeProperties_url')]"
 					},
 					"ls_unzip_properties_typeProperties_url": {
 						"value": "[parameters('ls_unzip_properties_typeProperties_url')]"
@@ -1374,6 +1388,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "ADFcopyproject_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFcopyproject_ArmTemplate_6')]"
 			]
 		}
 	]
