@@ -1,5 +1,5 @@
 {
-	"name": "MetadataDrivenCopyTask_z3b_MiddleLevel",
+	"name": "Metadata_dbactivity_rmp_MiddleLevel",
 	"properties": {
 		"description": "This pipeline will copy one batch of objects. The objects belonging to this batch will be copied parallelly.",
 		"activities": [
@@ -40,7 +40,7 @@
 									"partitionOption": "None"
 								},
 								"dataset": {
-									"referenceName": "MetadataDrivenCopyTask_z3b_ControlDS",
+									"referenceName": "Metadata_dbactivity_rmp_ControlDS",
 									"type": "DatasetReference"
 								},
 								"firstRowOnly": false
@@ -64,7 +64,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "MetadataDrivenCopyTask_z3b_BottomLevel",
+									"referenceName": "Metadata_dbactivity_rmp_BottomLevel",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,
@@ -104,10 +104,10 @@
 			}
 		},
 		"folder": {
-			"name": "MetadataDrivenCopyTask_z3b_20250728"
+			"name": "Metadata_dbactivity_rmp_20250728"
 		},
 		"annotations": [],
-		"lastPublishTime": "2025-07-28T15:25:30Z"
+		"lastPublishTime": "2025-07-28T15:25:31Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

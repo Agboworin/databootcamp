@@ -1,5 +1,5 @@
 {
-	"name": "MetadataDrivenCopyTask_z3b_TopLevel",
+	"name": "Metadata_dbactivity_rmp_TopLevel",
 	"properties": {
 		"description": "This pipeline will count the total number of objects (tables etc.) required to be copied in this run, come up with the number of sequential batches based on the max allowed concurrent copy task, and then execute another pipeline to copy different batches sequentially.",
 		"activities": [
@@ -26,7 +26,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "MetadataDrivenCopyTask_z3b_ControlDS",
+						"referenceName": "Metadata_dbactivity_rmp_ControlDS",
 						"type": "DatasetReference"
 					}
 				}
@@ -62,7 +62,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "MetadataDrivenCopyTask_z3b_MiddleLevel",
+									"referenceName": "Metadata_dbactivity_rmp_MiddleLevel",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,
@@ -113,11 +113,11 @@
 			},
 			"MainControlTableName": {
 				"type": "String",
-				"defaultValue": "dbo.MainControlTable_z3b"
+				"defaultValue": "dbo.MainControlTable_rmp"
 			}
 		},
 		"folder": {
-			"name": "MetadataDrivenCopyTask_z3b_20250728"
+			"name": "Metadata_dbactivity_rmp_20250728"
 		},
 		"annotations": [
 			"MetadataDrivenSolution"

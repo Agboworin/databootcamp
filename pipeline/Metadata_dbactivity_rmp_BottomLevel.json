@@ -1,5 +1,5 @@
 {
-	"name": "MetadataDrivenCopyTask_z3b_BottomLevel",
+	"name": "Metadata_dbactivity_rmp_BottomLevel",
 	"properties": {
 		"description": "This pipeline will copy objects from one group. The objects belonging to this group will be copied parallelly.",
 		"activities": [
@@ -99,7 +99,7 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_z3b_SourceDS",
+														"referenceName": "Metadata_dbactivity_rmp_SourceDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -115,7 +115,7 @@
 												],
 												"outputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_z3b_DestinationDS",
+														"referenceName": "Metadata_dbactivity_rmp_DestinationDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -158,7 +158,7 @@
 														"partitionOption": "None"
 													},
 													"dataset": {
-														"referenceName": "MetadataDrivenCopyTask_z3b_SourceDS",
+														"referenceName": "Metadata_dbactivity_rmp_SourceDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -249,7 +249,7 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_z3b_SourceDS",
+														"referenceName": "Metadata_dbactivity_rmp_SourceDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -265,7 +265,7 @@
 												],
 												"outputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_z3b_DestinationDS",
+														"referenceName": "Metadata_dbactivity_rmp_DestinationDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -300,7 +300,7 @@
 												},
 												"userProperties": [],
 												"typeProperties": {
-													"storedProcedureName": "[dbo].[UpdateWatermarkColumnValue_z3b]",
+													"storedProcedureName": "[dbo].[UpdateWatermarkColumnValue_rmp]",
 													"storedProcedureParameters": {
 														"Id": {
 															"value": {
@@ -396,7 +396,7 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "MetadataDrivenCopyTask_z3b_SourceDS",
+												"referenceName": "Metadata_dbactivity_rmp_SourceDS",
 												"type": "DatasetReference",
 												"parameters": {
 													"cw_schema": {
@@ -412,7 +412,7 @@
 										],
 										"outputs": [
 											{
-												"referenceName": "MetadataDrivenCopyTask_z3b_DestinationDS",
+												"referenceName": "Metadata_dbactivity_rmp_DestinationDS",
 												"type": "DatasetReference",
 												"parameters": {
 													"cw_schema": {
@@ -440,7 +440,7 @@
 			}
 		},
 		"folder": {
-			"name": "MetadataDrivenCopyTask_z3b_20250728"
+			"name": "Metadata_dbactivity_rmp_20250728"
 		},
 		"annotations": [],
 		"lastPublishTime": "2025-07-28T15:25:30Z"
